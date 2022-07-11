@@ -31,7 +31,7 @@ import java.util.ResourceBundle;
 
 public class ToaThuocViewController implements Initializable{
     @FXML private TableView<ToaThuoc> TVToaThuoc;
-
+    
     @FXML private AnchorPane apToaThuoc;
 
     @FXML private TableColumn<ToaThuoc, String> endDate;
@@ -60,7 +60,6 @@ public class ToaThuocViewController implements Initializable{
     private ArrayList<ThuocTrongToa> listToa1 = new ArrayList<>();
     Date date1 = new Date();
     ObservableList<ToaThuoc> observableList1 = FXCollections.observableArrayList(
-        new ToaThuoc(1,"ABC",date1,date1,listToa1)
         );
     public ObservableList<ToaThuoc> getListToa(){
             return this.observableList1;
@@ -77,11 +76,11 @@ public class ToaThuocViewController implements Initializable{
                         if(item == null){
                             setStyle("");
                         } else if (item.status()==1) {
-                            setStyle("-fx-background-color: #ff033e");
+                            setStyle("-fx-background-color: #ff1a1a");
                         } else if (item.status() == -1) {
                             setStyle("-fx-background-color: #95A7C0;");
                         } else if (item.status() == 0) {
-                            setStyle("-fx-background-color: #008000;");
+                            setStyle("-fx-background-color: #30AA3C;");
                         } else {
                             setStyle("");
                         }

@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClose" prefHeight="703.0" prefWidth="858.0" style="-fx-background-color: #08172c;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Prj2.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClose" prefHeight="703.0" prefWidth="858.0" style="-fx-background-color: #08172c;" styleClass="root1" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Prj2.controller.Controller">
    <children>
       <VBox prefHeight="694.0" prefWidth="203.0" style="-fx-background-color: #08172c;">
          <children>

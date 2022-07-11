@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="gpTuThuocA" prefHeight="508.0" prefWidth="654.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="gpTuThuocA" prefHeight="508.0" prefWidth="654.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;" styleClass="root" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     </columnConstraints>
@@ -24,7 +24,7 @@
         <RowConstraints maxHeight="681.0" minHeight="10.0" prefHeight="464.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <TableView fx:id="table" prefHeight="434.0" prefWidth="635.0" stylesheets="@Style.css" tableMenuButtonVisible="true" GridPane.rowIndex="1">
+        <TableView fx:id="table" prefHeight="434.0" prefWidth="635.0" stylesheets="@Style1.css" tableMenuButtonVisible="true" GridPane.rowIndex="1">
             <columns>
                 <TableColumn fx:id="productID" maxWidth="2500.0" prefWidth="28.0" text="ID" />
                 <TableColumn fx:id="name" prefWidth="152.79998779296875" text="Tên" />
@@ -37,7 +37,7 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
-        <Pane prefHeight="69.0" prefWidth="705.0">
+        <Pane prefHeight="69.0" prefWidth="705.0" styleClass="root" stylesheets="@Style1.css">
             <children>
                 <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="3.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                     <image>

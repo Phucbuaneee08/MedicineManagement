@@ -74,11 +74,11 @@ public class TuThuocController implements Initializable {
                     public void updateItem(Product item, boolean empty) {
                         super.updateItem(item, empty);
                         if(item == null){
-                            setStyle("");
+                           
                         } else if (item instanceof DungCu) {
-                            setStyle("");
+                            
                         } else if (((Thuoc) item).status() == -1) {
-                            setStyle("-fx-background-color: #FF0000;");
+                            setStyle("-fx-background-color: #ff1a1a;");
                         } else if (((Thuoc) item).status() == 0) {
                             setStyle("-fx-background-color: #FFFF00;");
                         } else {
