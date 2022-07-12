@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 
 public class ListToaThuoc {
-
-
+    
     public ObservableList<ToaThuoc> getListToa() {
         return this.list;
     }
@@ -24,7 +23,7 @@ public class ListToaThuoc {
         }
         return this.listToaThuoc;
     }
-   
+
     private ObservableList<ToaThuoc> list = FXCollections.observableArrayList();
     private ObservableList<ToaThuoc> listToaThuoc = FXCollections.observableArrayList();
 }

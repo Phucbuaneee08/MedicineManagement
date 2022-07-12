@@ -45,6 +45,7 @@ public class TuThuocController implements Initializable {
         filterBox.getItems().add("Thuốc");
         filterBox.getItems().add("Dụng Cụ");
         filterBox.getItems().add("Tất Cả");
+        filterBox.setValue("Tất Cả");
         btnAddmed.setOnAction(event -> getAddView());
     }
     public TuThuoc main = new TuThuoc();
@@ -74,9 +75,9 @@ public class TuThuocController implements Initializable {
                     public void updateItem(Product item, boolean empty) {
                         super.updateItem(item, empty);
                         if(item == null){
-                           
+                           setStyle("");
                         } else if (item instanceof DungCu) {
-                            
+                            setStyle("");
                         } else if (((Thuoc) item).status() == -1) {
                             setStyle("-fx-background-color: #ff1a1a;");
                         } else if (((Thuoc) item).status() == 0) {
@@ -127,12 +128,17 @@ public class TuThuocController implements Initializable {
                 return true;
             }
             String lowerCase =newVal.toLowerCase();
-            if(product.getName().toLowerCase().contains(lowerCase)){
+            if(product.getName().toLowerCase().indexOf(lowerCase)>-1){
                 return true;
+            }else if(product instanceof Thuoc && filterBox.getValue() == "Tất Cả"){
+                return ((Thuoc) product).getEffect().toLowerCase().indexOf(lowerCase)>-1;
             }else if(product instanceof Thuoc && filterBox.getValue() == "Thuốc"){
-                return ((Thuoc) product).getEffect().toLowerCase().contains(lowerCase);
+                return ((Thuoc) product).getEffect().toLowerCase().indexOf(lowerCase)>-1;
             } else if(product instanceof DungCu &&  filterBox.getValue() == "Dụng Cụ"){
-                return ((DungCu) product).getUse().toLowerCase().contains(lowerCase);
+                return ((DungCu) product).getUse().toLowerCase().indexOf(lowerCase)>-1;
+            }
+            else if(product instanceof DungCu &&  filterBox.getValue() == "Tất Cả"){
+                return ((DungCu) product).getUse().toLowerCase().indexOf(lowerCase)>-1;
             }
             else{
                 return false;

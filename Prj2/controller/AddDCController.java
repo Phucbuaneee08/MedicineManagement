@@ -55,10 +55,10 @@ public class AddDCController extends AddAbstractClass implements EditAble {
             alert.showAndWait();
         }
         else{
-            int rs = controller.main.getRsDC();
-            DungCu DungCu = new DungCu(rs,tfName.getText(),tfUnit.getText(),Integer.parseInt(tfQuantity.getText()),tfEffect.getText());
+            int rs = controller.main.getLastIndexDungCu();
+            DungCu DungCu = new DungCu(rs+1,tfName.getText(),tfUnit.getText(),Integer.parseInt(tfQuantity.getText()),tfEffect.getText());
             controller.main.getList().add(DungCu);
-            controller.main.setRsDC(rs+1);
+     
             stage.close();
         }
     }

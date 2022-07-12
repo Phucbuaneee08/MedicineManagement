@@ -63,10 +63,9 @@ public class AddMedController extends AddAbstractClass implements EditAble {
                 alert.showAndWait();
             }
             else{
-                int rs = controller.main.getRsThuoc();
+                int rs = controller.main.getLastIndexThuoc();
                 Thuoc thuoc = new Thuoc(rs+1,tfName.getText(),tfUnit.getText(),Integer.parseInt(tfQuantity.getText()),tfHSD.getValue(),tfEffect.getText());
                 controller.main.getList().add(thuoc);
-                controller.main.setRsThuoc(rs+1);
                 stage.close();
             }
         }

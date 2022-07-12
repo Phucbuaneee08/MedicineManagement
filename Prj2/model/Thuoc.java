@@ -30,7 +30,7 @@ public class Thuoc extends Product {
     }
     private LocalDate expiredDate;
     private String effect;
-    private String link;
+
 
     public LocalDate getExpiredDate() {
         return expiredDate;

@@ -75,7 +75,7 @@ public class Controller implements Initializable {
             try {
                 SaveToExcel excel = new SaveToExcel();
                 excel.setExcelList(new ArrayList<>(this.tuThuocController.main.getList()));
-                excel.setToaThuoc(new ArrayList<>(toaThuocViewController.observableList1));
+                excel.setToaThuoc(new ArrayList<>(toaThuocViewController.listToa));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -4,6 +4,8 @@ import Prj2.model.Product;
 import Prj2.model.ThuocTrongToa;
 import Prj2.model.ToaThuoc;
 import Prj2.save.SaveToExcel;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -25,7 +27,7 @@ import javafx.util.Callback;
 import java.util.Date;
 import java.io.IOException;
 import java.net.URL;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -34,22 +36,21 @@ public class ToaThuocViewController implements Initializable{
     
     @FXML private AnchorPane apToaThuoc;
 
-    @FXML private TableColumn<ToaThuoc, String> endDate;
+    @FXML private TableColumn<ToaThuoc, LocalDate> endDate;
 
     @FXML private TableColumn<ToaThuoc, String> name;
 
     @FXML private TableColumn<ToaThuoc, Integer> presID;
 
-    @FXML private TableColumn<ToaThuoc, String> startedDate;
+    @FXML private TableColumn<ToaThuoc, LocalDate> startedDate;
     public int lastIndexToa = 0 ;
     @FXML
     private VBox vbToaThuoc ;
     @FXML private  Button btnToaThuoc;
-    public ArrayList<ToaThuoc> listToa;
     private final TuThuocController tuThuocController;
     public ToaThuocViewController(Controller controller, TuThuocController tuThuocController) throws IOException {
 
-        this.observableList1.addAll(new SaveToExcel().getToaThuocFromExcel());
+        this.listToa.addAll(new SaveToExcel().getToaThuocFromExcel());
         FXMLLoader pane = new FXMLLoader(getClass().getResource("/Prj2/View/ToaThuoc.fxml"));
         pane.setController(this);
         AnchorPane anchorPane = pane.load();
@@ -59,12 +60,14 @@ public class ToaThuocViewController implements Initializable{
     }
     private ArrayList<ThuocTrongToa> listToa1 = new ArrayList<>();
     Date date1 = new Date();
-    ObservableList<ToaThuoc> observableList1 = FXCollections.observableArrayList(
+    ObservableList<ToaThuoc> listToa = FXCollections.observableArrayList(
         );
     public ObservableList<ToaThuoc> getListToa(){
-            return this.observableList1;
+            return this.listToa;
     }
-    
+    public int getLastIndexToa(){
+        return this.getListToa().get(listToa.size()-1).getPresID();
+    }
     public void showToaThuoc(){
         TVToaThuoc.setRowFactory(new Callback<>() {
             @Override
@@ -90,9 +93,12 @@ public class ToaThuocViewController implements Initializable{
         });
         presID.setCellValueFactory(new PropertyValueFactory<>("presID"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        startedDate.setCellValueFactory(new PropertyValueFactory<>("startedDate"));
+        startedDate.setCellValueFactory(cellData ->{
+             return new SimpleObjectProperty<>(((ToaThuoc)cellData.getValue()).getStartedDate());
+        }
+    );
         endDate.setCellValueFactory(new PropertyValueFactory<>("endDate"));
-        TVToaThuoc.setItems(observableList1);
+        TVToaThuoc.setItems(listToa);
     }
     private void addButtonToTable() throws IOException{
         TableColumn<ToaThuoc, Void> colBtn = new TableColumn<>("");
@@ -112,7 +118,7 @@ public class ToaThuocViewController implements Initializable{
                         //set action for edit button
                         m1.setOnAction(event->{
                             ToaThuoc toaThuoc = getTableRow().getItem();
-                            observableList1.remove(toaThuoc);
+                            listToa.remove(toaThuoc);
                         });
                         m3.setOnAction(event->{
                             ToaThuoc toaThuoc = getTableRow().getItem();
@@ -149,7 +155,7 @@ public class ToaThuocViewController implements Initializable{
 
     public void thongBaoUongThuoc(){
         int soToaDangTrongThoiGianUong = 0;
-        for(ToaThuoc x : observableList1){
+        for(ToaThuoc x : listToa){
             if(x.status() == 0){
                 soToaDangTrongThoiGianUong ++;
             }

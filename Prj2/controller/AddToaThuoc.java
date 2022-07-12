@@ -1,5 +1,7 @@
 package Prj2.controller;
 
+
+import Prj2.model.ListToaThuoc;
 import Prj2.model.Product;
 import Prj2.model.ThuocTrongToa;
 import Prj2.model.ToaThuoc;
@@ -97,19 +99,16 @@ public class AddToaThuoc extends AddAbstractClass {
     public void actionAdd(){
         ArrayList<ThuocTrongToa> listToa1 = new ArrayList<>();
         String name = tfName.getText();
-        ZoneId defaultZoneId = ZoneId.systemDefault();
-        LocalDate localDateEnd = tfDateEnd.getValue();
-        LocalDate localDateStart = tfDateStart.getValue();
-        Date dateStart = Date.from(localDateStart.atStartOfDay(defaultZoneId).toInstant());
-        Date dateEnd = Date.from(localDateEnd.atStartOfDay(defaultZoneId).toInstant());
-        toaThuoc = new ToaThuoc(1,name,dateStart,dateEnd,listToa1);
+        LocalDate dateEnd = tfDateEnd.getValue();
+        LocalDate dateStart = tfDateStart.getValue();
+        int rs = toaThuocViewController.getLastIndexToa();
+        toaThuoc = new ToaThuoc(rs+1,name,dateStart,dateEnd,listToa1);
         for(Node x : vbThemThuoc.getChildren()) {
             Product product = ((ComboBox<Product>) ((HBox) x).getChildren().get(0)).getValue();
             ThuocTrongToa t = new ThuocTrongToa(toaThuoc.getListProduct().size()+1,product.getName(), product.getUnit(), ((TextField) ((HBox) x).getChildren().get(1)).getText());
             System.out.println(product.getName());
             toaThuoc.getListProduct().add(t);
         }
-        toaThuoc.setPresID(toaThuocViewController.lastIndexToa+1);
         toaThuoc.setEndDate(dateEnd);
         toaThuoc.setStartedDate(dateStart);
         toaThuoc.setName(name);

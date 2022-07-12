@@ -146,8 +146,10 @@ public class SaveToExcel
             if(!isRowEmpty(nextRow)){
                 int presID =(int)nextRow.getCell(0).getNumericCellValue();
                 String name = nextRow.getCell(1).getStringCellValue();
-                Date endDate = nextRow.getCell(2).getDateCellValue() ;
-                Date startDate = nextRow.getCell(3).getDateCellValue() ;
+                LocalDate endDate = nextRow.getCell(2).getDateCellValue().toInstant()
+                                    .atZone(ZoneId.systemDefault()).toLocalDate();
+                LocalDate startDate = nextRow.getCell(3).getDateCellValue().toInstant()
+                .atZone(ZoneId.systemDefault()).toLocalDate(); 
                 Iterator<Row> iterThuoc = thuocSheet.iterator();
                 ArrayList<ThuocTrongToa> listThuocTrongToa = new ArrayList<>();
                 iterThuoc.next();
@@ -195,10 +197,14 @@ public class SaveToExcel
             cellToa = addRowToa.createCell(1);
             cellToa.setCellValue(x.getName());
             cellToa = addRowToa.createCell(2);
-            cellToa.setCellValue(x.getEndDate());
+            cellToa.setCellValue(Date.from(x.getEndDate().atStartOfDay()
+            .atZone(ZoneId.systemDefault())
+            .toInstant()));
             cellToa.setCellStyle(cellStyle);
             cellToa = addRowToa.createCell(3);
-            cellToa.setCellValue(x.getStartedDate());
+            cellToa.setCellValue(Date.from(x.getStartedDate().atStartOfDay()
+            .atZone(ZoneId.systemDefault())
+            .toInstant()));
             cellToa.setCellStyle(cellStyle);
             for(ThuocTrongToa i : x.getListProduct()) {
                 secondSheet.createRow(indexThuoc);

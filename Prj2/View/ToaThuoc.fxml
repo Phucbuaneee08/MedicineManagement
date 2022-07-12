@@ -11,24 +11,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="apToaThuoc" prefHeight="508.0" prefWidth="654.0" styleClass="root" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="apToaThuoc" prefHeight="465.0" prefWidth="708.0" styleClass="root" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-      <TableView fx:id="TVToaThuoc" layoutY="61.0" prefHeight="448.0" prefWidth="654.0" styleClass="column-header-background" stylesheets="@Style1.css">
+      <TableView fx:id="TVToaThuoc" layoutY="61.0" prefHeight="404.0" prefWidth="708.0" styleClass="column-header-background" stylesheets="@Style1.css">
         <columns>
           <TableColumn fx:id="presID" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="name" maxWidth="7500.0" prefWidth="164.0" text=" Tên toa thuốc" />
-          <TableColumn fx:id="startedDate" prefWidth="159.2000274658203" text="Ngày bắt đầu" />
-            <TableColumn fx:id="endDate" prefWidth="206.4000244140625" text="Ngày kết thúc" />
+            <TableColumn fx:id="name" maxWidth="8000.0" prefWidth="197.6000747680664" text=" Tên toa thuốc" />
+          <TableColumn fx:id="startedDate" prefWidth="182.39996337890625" text="Ngày bắt đầu" />
+            <TableColumn fx:id="endDate" prefWidth="200.80001831054688" text="Ngày kết thúc" />
         </columns>
       </TableView>
-        <Button fx:id="btnToaThuoc" layoutX="550.0" layoutY="16.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="104.0" style="-fx-background-color: #08172c; -fx-background-radius: 0.5em; -fx-border-color: #fdcb03; -fx-border-width: 2;" styleClass="Button" stylesheets="@Style.css" text="Thêm toa" textFill="#ffe371">
+        <Button fx:id="btnToaThuoc" layoutX="590.0" layoutY="16.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="113.0" style="-fx-background-color: #08172c; -fx-background-radius: 0.5em; -fx-border-color: #fdcb03; -fx-border-width: 2;" styleClass="Button" stylesheets="@Style.css" text="Thêm toa" textFill="#ffe371">
          <font>
             <Font name="Cambria Bold" size="15.0" />
          </font>
          <padding>
             <Insets left="16.0" />
          </padding></Button>
-      <FontAwesomeIcon fill="WHITE" glyphName="PLUS" layoutX="558.0" layoutY="40.0" text="">
+      <FontAwesomeIcon fill="WHITE" glyphName="PLUS" layoutX="609.0" layoutY="38.0" text="">
          <font>
             <Font size="9.0" />
          </font>
@@ -63,7 +63,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Pane prefHeight="36.0" prefWidth="38.0" style="-fx-background-color: #95A7C0; -fx-background-radius: 50%;" />
+                  <Pane prefHeight="36.0" prefWidth="38.0" style="-fx-background-color: #9A9A9A; -fx-background-radius: 50%;" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chưa đến " textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="26.0" top="10.0" />

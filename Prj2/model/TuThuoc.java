@@ -13,7 +13,8 @@ import java.util.ArrayList;
 public class TuThuoc {
     private int rsThuoc = 0;
     private int rsDC = 0;
-
+    
+   
     public int getRsThuoc() {
         return rsThuoc;
     }
@@ -47,8 +48,13 @@ public class TuThuoc {
     }
 
 
-
-    public ObservableList<Product> getList() {
+    public int getLastIndexThuoc(){
+        return this.getListThuoc().get(listThuoc.size()-1).getProductID();
+    }
+    public int getLastIndexDungCu(){
+        return this.getListDC().get(listDC.size()-1).getProductID();
+    }
+    public ObservableList<Product>  getList() {
         return this.list;
     }
     public ObservableList<Product> getListThuoc() {
@@ -69,6 +75,7 @@ public class TuThuoc {
         }
         return this.listDC;
     }
+
     private ObservableList<Product> list = FXCollections.observableArrayList();
     private ObservableList<Product> listThuoc = FXCollections.observableArrayList();
     private ObservableList<Product> listDC = FXCollections.observableArrayList();
