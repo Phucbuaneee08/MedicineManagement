@@ -7,7 +7,7 @@ Cách sử dụng
 Với Intellij thì project structure  -> Library -> + 
 
 - Nếu gặp lỗi về javafx khi đã add: 
-![image](https://user-images.githubusercontent.com/81417323/178755195-d7cefc8f-2480-459f-9ed8-9a4fbb42d516.png) \n
+![image](https://user-images.githubusercontent.com/81417323/178755195-d7cefc8f-2480-459f-9ed8-9a4fbb42d516.png)  <br />
 -> thêm VM OPTIONS 
 ``` --module-path /path/to/JavaFX/lib --add-modules=javafx.controls ```
 
