@@ -1,6 +1,6 @@
 package Prj2.model;
 
-import Prj2.Service.CrawlInfo;
+import Prj2.DAO.CrawlInfo;
 import javafx.collections.ObservableList;
 import javafx.scene.text.Text;
 

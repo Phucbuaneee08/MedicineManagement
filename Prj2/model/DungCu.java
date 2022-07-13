@@ -1,16 +1,11 @@
 package Prj2.model;
 
 import java.util.ArrayList;
-import Prj2.Service.CrawlInfo;
-import javafx.collections.ObservableList;
+import Prj2.DAO.CrawlInfo;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
+
 public class DungCu extends Product {
 
 

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import Prj2.model.ToaThuoc;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -36,7 +35,7 @@ public class ShowDetailTTController implements Initializable {
         stage = new Stage();
         // TO
         try {
-            FXMLLoader parent =new FXMLLoader((getClass().getResource("/Prj2/View/detailToaThuoc.fxml")));
+            FXMLLoader parent =new FXMLLoader((getClass().getResource("/Prj2/view/detailToaThuoc.fxml")));
             parent.setController(this);
             stage.setScene(new Scene(parent.load()));
             stage.initStyle(StageStyle.UTILITY);

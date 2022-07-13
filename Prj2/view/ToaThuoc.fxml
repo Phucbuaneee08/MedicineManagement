@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apToaThuoc" prefHeight="465.0" prefWidth="708.0" styleClass="root" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <TableView fx:id="TVToaThuoc" layoutY="61.0" prefHeight="404.0" prefWidth="708.0" styleClass="column-header-background" stylesheets="@Style1.css">
+        <columns>
+          <TableColumn fx:id="presID" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="name" maxWidth="8000.0" prefWidth="197.6000747680664" text=" Tên toa thuốc" />
+          <TableColumn fx:id="startedDate" prefWidth="182.39996337890625" text="Ngày bắt đầu" />
+            <TableColumn fx:id="endDate" prefWidth="200.80001831054688" text="Ngày kết thúc" />
+        </columns>
+      </TableView>
+        <Button fx:id="btnToaThuoc" layoutX="590.0" layoutY="16.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="113.0" style="-fx-background-color: #08172c; -fx-background-radius: 0.5em; -fx-border-color: #fdcb03; -fx-border-width: 2;" styleClass="Button" stylesheets="@Style.css" text="Thêm toa" textFill="#ffe371">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+         <padding>
+            <Insets left="16.0" />
+         </padding></Button>
+      <FontAwesomeIcon fill="WHITE" glyphName="PLUS" layoutX="609.0" layoutY="38.0" text="">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </FontAwesomeIcon>
+      <HBox layoutX="42.0" layoutY="15.0" prefHeight="36.0" prefWidth="448.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="36.0" prefWidth="38.0" style="-fx-background-color: #30AA3C; -fx-background-radius: 50%;" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Đang uống" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="26.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Cambria Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="36.0" prefWidth="38.0" style="-fx-background-color: #ff1a1a; -fx-background-radius: 50%;" />
+                  <Text fill="#0b0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Quá hạn" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="26.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="36.0" prefWidth="38.0" style="-fx-background-color: #9A9A9A; -fx-background-radius: 50%;" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chưa đến " textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="26.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Cambria Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>

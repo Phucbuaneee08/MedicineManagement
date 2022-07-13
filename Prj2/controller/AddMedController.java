@@ -45,7 +45,7 @@ public class AddMedController extends AddAbstractClass implements EditAble {
     }
     @Override
     public void loadStage() {
-        super.loadStage("/Prj2/View/AddMed.fxml",this.stage);
+        super.loadStage("/Prj2/view/AddMed.fxml",this.stage);
     }
     @Override
     public void actionAdd() {

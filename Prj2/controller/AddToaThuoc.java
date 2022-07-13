@@ -1,33 +1,20 @@
 package Prj2.controller;
 
 
-import Prj2.model.ListToaThuoc;
 import Prj2.model.Product;
 import Prj2.model.ThuocTrongToa;
 import Prj2.model.ToaThuoc;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import javafx.geometry.Insets;
 
-import java.io.IOException;
-import java.net.URL;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.ResourceBundle;
 
 public class AddToaThuoc extends AddAbstractClass {
     private final Stage stage;
@@ -51,7 +38,7 @@ public class AddToaThuoc extends AddAbstractClass {
     }
     @Override
     public void loadStage() {
-        super.loadStage("/Prj2/View/AddToaThuoc.fxml",this.stage);
+        super.loadStage("/Prj2/view/AddToaThuoc.fxml",this.stage);
     }
 
     @FXML
@@ -103,17 +90,23 @@ public class AddToaThuoc extends AddAbstractClass {
         LocalDate dateStart = tfDateStart.getValue();
         int rs = toaThuocViewController.getLastIndexToa();
         toaThuoc = new ToaThuoc(rs+1,name,dateStart,dateEnd,listToa1);
-        for(Node x : vbThemThuoc.getChildren()) {
-            Product product = ((ComboBox<Product>) ((HBox) x).getChildren().get(0)).getValue();
-            ThuocTrongToa t = new ThuocTrongToa(toaThuoc.getListProduct().size()+1,product.getName(), product.getUnit(), ((TextField) ((HBox) x).getChildren().get(1)).getText());
-            System.out.println(product.getName());
-            toaThuoc.getListProduct().add(t);
+        if(dateEnd == null || dateStart == null || name == null || vbThemThuoc.getChildren().size() == 0 ){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Hãy nhập đủ trường thông tin");
+            alert.showAndWait();
+        } else {
+            for(Node x : vbThemThuoc.getChildren()) {
+                Product product = ((ComboBox<Product>) ((HBox) x).getChildren().get(0)).getValue();
+                ThuocTrongToa t = new ThuocTrongToa(toaThuoc.getListProduct().size()+1,product.getName(), product.getUnit(), ((TextField) ((HBox) x).getChildren().get(1)).getText());
+                System.out.println(product.getName());
+                toaThuoc.getListProduct().add(t);
+            }
+            toaThuoc.setEndDate(dateEnd);
+            toaThuoc.setStartedDate(dateStart);
+            toaThuoc.setName(name);
+            toaThuocViewController.getListToa().add(toaThuoc);
+            stage.close();
         }
-        toaThuoc.setEndDate(dateEnd);
-        toaThuoc.setStartedDate(dateStart);
-        toaThuoc.setName(name);
-        toaThuocViewController.getListToa().add(toaThuoc);
-        stage.close();
     }
  
 }

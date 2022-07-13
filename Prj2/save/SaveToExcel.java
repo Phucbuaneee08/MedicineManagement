@@ -14,7 +14,7 @@ import java.util.Iterator;
 
 public class SaveToExcel
 {
-    private final String excelPath = "C:\\DevC++\\ViscodeCC++\\.vscode\\FirstJavaFxProject\\FirstJavaFxProject\\src\\Prj2\\save\\QLTuThuoc.xlsx";
+    private final String excelPath = "Prj2/save/QLTuThuoc.xlsx";
     public  ArrayList<Product> getExcelFileDemo() throws Exception
     {
         ArrayList<Product> list = new ArrayList<>();

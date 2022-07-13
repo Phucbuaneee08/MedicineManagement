@@ -1,6 +1,6 @@
 package Prj2.controller;
 
-import Prj2.Service.CrawlInfo;
+import Prj2.DAO.CrawlInfo;
 import Prj2.model.TinTuc;
 import Prj2.model.TinTucBox;
 import javafx.fxml.FXML;
@@ -15,7 +15,7 @@ public class TinTucController {
     @FXML private Button btnPre;
     private int page = 1;
     public TinTucController(Controller controller) throws IOException {
-        FXMLLoader pane = new FXMLLoader(getClass().getResource("/Prj2/View/TienIch.fxml"));
+        FXMLLoader pane = new FXMLLoader(getClass().getResource("/Prj2/view/TienIch.fxml"));
         pane.setController(this);
         controller.setTienIchView(pane.load());
         this.btnPre.setOnAction(event -> {

@@ -32,7 +32,7 @@ public class ShowDetail extends ShowableAbstractClass{
     }
     @Override
     public void loadStage() {
-        super.loadStage("/Prj2/View/ShowDetail.fxml",this.stage);
+        super.loadStage("/Prj2/view/ShowDetail.fxml",this.stage);
     }
     public void setVBox(ArrayList<Text> x ) throws IOException{
         for(Text i : x){

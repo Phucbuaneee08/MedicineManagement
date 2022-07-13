@@ -35,7 +35,7 @@ public class TuThuocController implements Initializable {
     @FXML private ChoiceBox<String> choiceBox;
 
     public TuThuocController(Controller controller) throws IOException {
-        FXMLLoader pane = new FXMLLoader(getClass().getResource("/Prj2/View/TuThuoc.fxml"));
+        FXMLLoader pane = new FXMLLoader(getClass().getResource("/Prj2/view/TuThuoc.fxml"));
         pane.setController(this);
         GridPane gridPane = pane.load();
         controller.setTuThuocView(gridPane);

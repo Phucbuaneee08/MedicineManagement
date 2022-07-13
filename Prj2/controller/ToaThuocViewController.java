@@ -5,7 +5,6 @@ import Prj2.model.ThuocTrongToa;
 import Prj2.model.ToaThuoc;
 import Prj2.save.SaveToExcel;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -51,7 +50,7 @@ public class ToaThuocViewController implements Initializable{
     public ToaThuocViewController(Controller controller, TuThuocController tuThuocController) throws IOException {
 
         this.listToa.addAll(new SaveToExcel().getToaThuocFromExcel());
-        FXMLLoader pane = new FXMLLoader(getClass().getResource("/Prj2/View/ToaThuoc.fxml"));
+        FXMLLoader pane = new FXMLLoader(getClass().getResource("/Prj2/view/ToaThuoc.fxml"));
         pane.setController(this);
         AnchorPane anchorPane = pane.load();
         controller.setToaThuocView(anchorPane);
@@ -66,7 +65,8 @@ public class ToaThuocViewController implements Initializable{
             return this.listToa;
     }
     public int getLastIndexToa(){
-        return this.getListToa().get(listToa.size()-1).getPresID();
+        if (getListToa().size() == 0) return 0;
+        return this.getListToa().get(getListToa().size()-1).getPresID();
     }
     public void showToaThuoc(){
         TVToaThuoc.setRowFactory(new Callback<>() {

@@ -39,7 +39,7 @@ public class AddDCController extends AddAbstractClass implements EditAble {
 
     @Override
     public void loadStage() {
-        super.loadStage("/Prj2/View/AddDC.fxml", this.stage);
+        super.loadStage("/Prj2/view/AddDC.fxml", this.stage);
     }
 
     @Override
