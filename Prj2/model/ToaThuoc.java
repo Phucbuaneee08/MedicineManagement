@@ -68,7 +68,7 @@ public class ToaThuoc {
         info.add(new Text ("Ngày kết thúc: " + getEndDate()));
         info.add(new Text("Chi tiết: "));
         for(ThuocTrongToa x : this.listProduct){
-            info.add(new Text("Thuốc :"+ x.getName() + "      "+"Liều dùng:" + x.getLieu()));
+            info.add(new Text("- Thuốc :"+ x.getName() +"("+"Liều dùng:" + x.getLieu()+")"));
         }
         return info;
     }

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="gpTuThuocA" prefHeight="465.0" prefWidth="708.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;" styleClass="root" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="gpTuThuocA" prefHeight="465.0" prefWidth="708.0" style="-fx-background-color: #ffffff;" styleClass="root" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     </columnConstraints>
@@ -25,7 +25,7 @@
         <RowConstraints maxHeight="681.0" minHeight="10.0" prefHeight="436.79998779296875" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <TableView fx:id="table" prefHeight="431.0" prefWidth="635.0" styleClass="column-header-background" stylesheets="@Style1.css" tableMenuButtonVisible="true" GridPane.rowIndex="1">
+        <TableView fx:id="table" prefHeight="431.0" prefWidth="635.0" styleClass="table-cell" stylesheets="@Style1.css" tableMenuButtonVisible="true" GridPane.rowIndex="1">
             <columns>
                 <TableColumn fx:id="productID" maxWidth="2000.0" prefWidth="28.0" text="ID" />
                 <TableColumn fx:id="name" prefWidth="133.59998321533203" text="Tên" />
@@ -54,7 +54,7 @@
                         <Cursor fx:constant="DEFAULT" />
                     </cursor>
                 </ComboBox>
-                <Button fx:id="btnAddmed" graphicTextGap="9.0" layoutX="540.0" layoutY="4.0" minWidth="33.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="93.0" style="-fx-background-color: #14233a; -fx-background-radius: 3; -fx-border-radius: 0em; -fx-border-width: 1; -fx-border-color: #fdcb03;" styleClass="Button" stylesheets="@Style.css" text="Thêm" textFill="#fffdfd">
+                <Button fx:id="btnAddmed" graphicTextGap="9.0" layoutX="540.0" layoutY="4.0" minWidth="33.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="93.0" style="-fx-background-color: #14233a; -fx-background-radius: 3; -fx-border-radius: 0em; -fx-border-width: 2; -fx-border-color: #ffffff;" styleClass="Button" stylesheets="@Style.css" text="Thêm" textFill="#fffdfd">
                     <graphic>
                         <ImageView fitHeight="19.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                             <image>

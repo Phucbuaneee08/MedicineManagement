@@ -197,16 +197,7 @@
       </ImageView>
       <StackPane layoutX="209.0" layoutY="191.0" prefHeight="470.0" prefWidth="708.0" style="-fx-background-color: #cdd9f4;">
          <children>
-            <AnchorPane fx:id="apTuThuoc" prefHeight="476.0" prefWidth="654.0">
-               <fx:include fx:id="gpTuThuoc" source="TuThuoc.fxml" />
-            </AnchorPane>
-            <AnchorPane fx:id="gpToaThuoc" prefHeight="446.0" prefWidth="642.0" style="-fx-background-color: #ffffff;">
-                       <fx:include fx:id="toaThuocView" prefHeight="400.0" prefWidth="622.0" source="ToaThuoc.fxml" />
-            </AnchorPane>
-            <AnchorPane fx:id="gpTienIch" prefHeight="510.0" prefWidth="654.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;">
-               <fx:include fx:id="tienIchView" prefHeight="400.0" prefWidth="622.0" source="TienIch.fxml" />
-            </AnchorPane>
-            <GridPane fx:id="gpCaiDat" prefHeight="436.0" prefWidth="708.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;">
+            <GridPane fx:id="gpCaiDat" prefHeight="436.0" prefWidth="708.0" style="-fx-background-color: #ffffff;">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                </columnConstraints>
@@ -216,7 +207,7 @@
                   <RowConstraints maxHeight="470.4" minHeight="0.0" prefHeight="470.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fitHeight="470.0" fitWidth="709.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                  <ImageView fitHeight="474.0" fitWidth="709.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                      <image>
                         <Image url="@../asset/SharedScreenshot.jpg" />
                      </image>
@@ -226,6 +217,15 @@
                   </ImageView>
                </children>
             </GridPane>
+            <AnchorPane fx:id="gpToaThuoc" prefHeight="446.0" prefWidth="642.0" style="-fx-background-color: #ffffff;">
+                       <fx:include fx:id="toaThuocView" prefHeight="400.0" prefWidth="622.0" source="ToaThuoc.fxml" />
+            </AnchorPane>
+            <AnchorPane fx:id="gpTienIch" prefHeight="510.0" prefWidth="654.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;">
+               <fx:include fx:id="tienIchView" prefHeight="400.0" prefWidth="622.0" source="TienIch.fxml" />
+            </AnchorPane>
+            <AnchorPane fx:id="apTuThuoc" prefHeight="484.0" prefWidth="710.0" style="-fx-background-color: #ffffff;">
+               <fx:include fx:id="gpTuThuoc" source="TuThuoc.fxml" />
+            </AnchorPane>
          </children>
       </StackPane>
    </children>

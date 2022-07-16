@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="apToaThuoc" prefHeight="465.0" prefWidth="708.0" styleClass="root" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-      <TableView fx:id="TVToaThuoc" layoutY="61.0" prefHeight="404.0" prefWidth="708.0" styleClass="column-header-background" stylesheets="@Style1.css">
+      <TableView fx:id="TVToaThuoc" layoutY="54.0" prefHeight="411.0" prefWidth="708.0" style="-fx-background-color: #ffffff;" styleClass="table-cell" stylesheets="@Style1.css">
         <columns>
           <TableColumn fx:id="presID" prefWidth="75.0" text="ID" />
             <TableColumn fx:id="name" maxWidth="8000.0" prefWidth="197.6000747680664" text=" Tên toa thuốc" />
@@ -21,7 +21,7 @@
             <TableColumn fx:id="endDate" prefWidth="200.80001831054688" text="Ngày kết thúc" />
         </columns>
       </TableView>
-        <Button fx:id="btnToaThuoc" layoutX="590.0" layoutY="16.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="113.0" style="-fx-background-color: #08172c; -fx-background-radius: 0.5em; -fx-border-color: #fdcb03; -fx-border-width: 2;" styleClass="Button" stylesheets="@Style.css" text="Thêm toa" textFill="#ffe371">
+        <Button fx:id="btnToaThuoc" layoutX="590.0" layoutY="15.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="113.0" style="-fx-background-color: #08172c; -fx-background-radius: 0.5em; -fx-border-color: #fdcb03; -fx-border-width: 2;" styleClass="Button" stylesheets="@Style.css" text="Thêm toa" textFill="#ffe371">
          <font>
             <Font name="Cambria Bold" size="15.0" />
          </font>
@@ -33,7 +33,7 @@
             <Font size="9.0" />
          </font>
       </FontAwesomeIcon>
-      <HBox layoutX="42.0" layoutY="15.0" prefHeight="36.0" prefWidth="448.0">
+      <HBox layoutX="42.0" layoutY="10.0" prefHeight="36.0" prefWidth="448.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
