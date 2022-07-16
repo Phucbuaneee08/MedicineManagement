@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClose" prefHeight="661.0" prefWidth="918.0" style="-fx-background-color: #08172c;" styleClass="root1" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Prj2.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClose" prefHeight="661.0" prefWidth="920.0" style="-fx-background-color: #08172c;" stylesheets="@Style1.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Prj2.controller.Controller">
    <children>
       <VBox layoutX="1.0" prefHeight="662.0" prefWidth="202.0" style="-fx-background-color: #08172c;">
          <children>
@@ -197,31 +197,35 @@
       </ImageView>
       <StackPane layoutX="209.0" layoutY="191.0" prefHeight="470.0" prefWidth="708.0" style="-fx-background-color: #cdd9f4;">
          <children>
-            <GridPane fx:id="gpCaiDat" prefHeight="473.0" prefWidth="650.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="166.3999816894531" minHeight="10.0" prefHeight="57.599993896484364" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="416.8000061035156" minHeight="10.0" prefHeight="416.8000061035156" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="20.0" prefHeight="26.0" prefWidth="674.0" text="SETTINGS" textFill="#632b3f" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Cambria Bold" size="19.0" />
-                     </font>
-                  </Label>
-               </children>
-            </GridPane>
+            <AnchorPane fx:id="apTuThuoc" prefHeight="476.0" prefWidth="654.0">
+               <fx:include fx:id="gpTuThuoc" source="TuThuoc.fxml" />
+            </AnchorPane>
             <AnchorPane fx:id="gpToaThuoc" prefHeight="446.0" prefWidth="642.0" style="-fx-background-color: #ffffff;">
                        <fx:include fx:id="toaThuocView" prefHeight="400.0" prefWidth="622.0" source="ToaThuoc.fxml" />
             </AnchorPane>
             <AnchorPane fx:id="gpTienIch" prefHeight="510.0" prefWidth="654.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;">
                <fx:include fx:id="tienIchView" prefHeight="400.0" prefWidth="622.0" source="TienIch.fxml" />
             </AnchorPane>
-            <AnchorPane fx:id="apTuThuoc" prefHeight="476.0" prefWidth="654.0">
-               <fx:include fx:id="gpTuThuoc" source="TuThuoc.fxml" />
-            </AnchorPane>
+            <GridPane fx:id="gpCaiDat" prefHeight="436.0" prefWidth="708.0" style="-fx-border-width: 20; -fx-background-color: #ffffff;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="470.4" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="470.4" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="470.4" minHeight="0.0" prefHeight="470.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="470.0" fitWidth="709.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../asset/SharedScreenshot.jpg" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ImageView>
+               </children>
+            </GridPane>
          </children>
       </StackPane>
    </children>

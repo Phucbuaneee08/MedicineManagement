@@ -103,6 +103,11 @@ public class AddToaThuoc extends AddAbstractClass {
         LocalDate dateStart = tfDateStart.getValue();
         int rs = toaThuocViewController.getLastIndexToa();
         toaThuoc = new ToaThuoc(rs+1,name,dateStart,dateEnd,listToa1);
+        if(dateEnd == null || dateStart == null || name == null || vbThemThuoc.getChildren().size() == 0 ){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Hãy nhập đủ trường thông tin");
+            alert.showAndWait();
+        } else {
         for(Node x : vbThemThuoc.getChildren()) {
             Product product = ((ComboBox<Product>) ((HBox) x).getChildren().get(0)).getValue();
             ThuocTrongToa t = new ThuocTrongToa(toaThuoc.getListProduct().size()+1,product.getName(), product.getUnit(), ((TextField) ((HBox) x).getChildren().get(1)).getText());
@@ -114,6 +119,7 @@ public class AddToaThuoc extends AddAbstractClass {
         toaThuoc.setName(name);
         toaThuocViewController.getListToa().add(toaThuoc);
         stage.close();
+        }
     }
  
 }

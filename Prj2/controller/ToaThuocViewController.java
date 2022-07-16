@@ -66,7 +66,8 @@ public class ToaThuocViewController implements Initializable{
             return this.listToa;
     }
     public int getLastIndexToa(){
-        return this.getListToa().get(listToa.size()-1).getPresID();
+        if (getListToa().size() == 0) return 0;
+        return this.getListToa().get(getListToa().size()-1).getPresID();
     }
     public void showToaThuoc(){
         TVToaThuoc.setRowFactory(new Callback<>() {

@@ -62,6 +62,7 @@
 .Button:focused{
     -fx-background-color: #1587ea;
     -fx-border-color:#b4caca;
+    -fx-text-background-color:green;
 }
 .icon{
     -fx-background-color: #ffffff;
