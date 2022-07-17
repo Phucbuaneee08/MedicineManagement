@@ -61,6 +61,11 @@ public class AddMedController extends AddAbstractClass implements EditAble {
                 alert.setHeaderText(null);
                 alert.setContentText("Hãy điền vào hết chỗ trống");
                 alert.showAndWait();
+            } else if(Integer.parseInt(tfQuantity.getText()) <= 0){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("Số lượng thuốc phải là số nguyên dương");
+                alert.showAndWait();
             }
             else{
                 int rs = controller.main.getLastIndexThuoc();
@@ -72,13 +77,32 @@ public class AddMedController extends AddAbstractClass implements EditAble {
     }
     @Override
     public void actionEdit(Product x){
+        if(tfName.getText().isEmpty() ||tfQuantity.getText().isEmpty()||tfUnit.getText().isEmpty()||tfEffect.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Hãy điền vào hết chỗ trống");
+            alert.showAndWait();
+        }
+        else{
+            if(tfHSD.getValue() == null){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("Hãy điền vào hết chỗ trống");
+                alert.showAndWait();
+            } else if(Integer.parseInt(tfQuantity.getText()) <= 0){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("Số lượng thuốc phải là số nguyên dương");
+                alert.showAndWait();
+            } else {
         x.setName(tfName.getText());
         x.setUnit(tfUnit.getText());
         ((Thuoc)x).setQuantity(Integer.parseInt(tfQuantity.getText()));
         ((Thuoc)x).setExpiredDate(tfHSD.getValue());
         ((Thuoc)x).setEffect(tfEffect.getText());
         controller.table.refresh();
-        stage.close();
+        stage.close();}
+         }
     }
     public void setTextField(Product x){
         tfName.setText(x.getName());

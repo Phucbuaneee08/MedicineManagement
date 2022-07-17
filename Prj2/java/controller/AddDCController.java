@@ -53,8 +53,12 @@ public class AddDCController extends AddAbstractClass implements EditAble {
             alert.setHeaderText(null);
             alert.setContentText("Hãy điền vào hết chỗ trống");
             alert.showAndWait();
-        }
-        else{
+        } else if(Integer.parseInt(tfQuantity.getText()) <= 0){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Số lượng dụng cụ phải là số nguyên dương");
+            alert.showAndWait();
+        } else{
             int rs = controller.main.getLastIndexDungCu();
             DungCu DungCu = new DungCu(rs+1,tfName.getText(),tfUnit.getText(),Integer.parseInt(tfQuantity.getText()),tfEffect.getText());
             controller.main.getList().add(DungCu);
@@ -65,12 +69,19 @@ public class AddDCController extends AddAbstractClass implements EditAble {
 
     @Override
     public void actionEdit(Product x){
-        x.setName(tfName.getText());
-        ((DungCu)x).setQuantity(Integer.parseInt(tfQuantity.getText()));
-        x.setUnit(tfUnit.getText());
-        ((DungCu)x).setUse(tfEffect.getText());
-        controller.table.refresh();
-        stage.close();
+        if(Integer.parseInt(tfQuantity.getText()) <= 0){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Số lượng dụng cụ phải là số nguyên dương");
+            alert.showAndWait();}
+        else {
+            x.setName(tfName.getText());
+            ((DungCu)x).setQuantity(Integer.parseInt(tfQuantity.getText()));
+            x.setUnit(tfUnit.getText());
+            ((DungCu)x).setUse(tfEffect.getText());
+            controller.table.refresh();
+            stage.close();
+        }
     }
     @Override
     public void setTextField(Product x){
