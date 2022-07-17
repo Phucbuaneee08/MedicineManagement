@@ -16,38 +16,27 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class ShowDetailTTController implements Initializable {
+public class ShowDetailTTController extends ShowableAbstractClass{
     private  Stage stage ;
     private ToaThuocViewController controller;
-    
     @FXML
     private VBox vbDetail;
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // TODO Auto-generated method stub
-        
-    } 
     public ShowDetailTTController(ToaThuocViewController presController){
         this.controller = presController;
         stage = new Stage();
-        // TO
-        try {
-            FXMLLoader parent =new FXMLLoader((getClass().getResource("/Prj2/resource/view/detailToaThuoc.fxml")));
-            parent.setController(this);
-            stage.setScene(new Scene(parent.load()));
-            stage.initStyle(StageStyle.UTILITY);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        this.loadStage();
     }
-
+    @Override
+    public void loadStage() {
+        super.loadStage("/Prj2/resource/view/detailToaThuoc.fxml",this.stage);
+    }
+    @Override
     public void showStage(){
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
     }
 
-    void setTextField(ArrayList<Text> arrayList){
+    void show(ArrayList<Text> arrayList){
         for(Text i : arrayList){
             i.setWrappingWidth(vbDetail.getPrefWidth() - 30);
             vbDetail.getChildren().add(i);

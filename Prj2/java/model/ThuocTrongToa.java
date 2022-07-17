@@ -1,7 +1,7 @@
 package Prj2.java.model;
 
 public class ThuocTrongToa extends Product {
-
+    private final String lieu;
     public String getLieu() {
         return lieu;
     }
@@ -10,5 +10,5 @@ public class ThuocTrongToa extends Product {
         super(productID,name,unit);
         this.lieu = lieu;
     }
-    private final String lieu;
+
 }

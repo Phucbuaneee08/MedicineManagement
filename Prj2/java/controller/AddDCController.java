@@ -60,7 +60,7 @@ public class AddDCController extends AddAbstractClass implements EditAble {
             alert.showAndWait();
         } else{
             int rs = controller.main.getLastIndexDungCu();
-            DungCu DungCu = new DungCu(rs+1,tfName.getText(),tfUnit.getText(),Integer.parseInt(tfQuantity.getText()),tfEffect.getText());
+            Product DungCu = new DungCu(rs+1,tfName.getText(),tfUnit.getText(),Integer.parseInt(tfQuantity.getText()),tfEffect.getText());
             controller.main.getList().add(DungCu);
      
             stage.close();

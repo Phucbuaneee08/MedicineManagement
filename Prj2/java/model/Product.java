@@ -17,8 +17,6 @@ public abstract class Product {
         this.name = name;
         this.unit = unit;
     }
-
-    private int quantity;
     private String unit;
 
     public int getProductID() {

@@ -112,7 +112,7 @@ public class ToaThuocViewController implements Initializable{
                         m3.setOnAction(event->{
                             ToaThuoc toaThuoc = getTableRow().getItem();
                             ShowDetailTTController showDetailTTController = new ShowDetailTTController(ToaThuocViewController.this ) ;
-                            showDetailTTController.setTextField(toaThuoc.showInfo());
+                            showDetailTTController.show(toaThuoc.showInfo());
                             showDetailTTController.showStage();
                         });
                     }

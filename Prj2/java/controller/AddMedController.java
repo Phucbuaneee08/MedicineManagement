@@ -69,7 +69,7 @@ public class AddMedController extends AddAbstractClass implements EditAble {
             }
             else{
                 int rs = controller.main.getLastIndexThuoc();
-                Thuoc thuoc = new Thuoc(rs+1,tfName.getText(),tfUnit.getText(),Integer.parseInt(tfQuantity.getText()),tfHSD.getValue(),tfEffect.getText());
+                Product thuoc = new Thuoc(rs+1,tfName.getText(),tfUnit.getText(),Integer.parseInt(tfQuantity.getText()),tfHSD.getValue(),tfEffect.getText());
                 controller.main.getList().add(thuoc);
                 stage.close();
             }
@@ -104,6 +104,7 @@ public class AddMedController extends AddAbstractClass implements EditAble {
         stage.close();}
          }
     }
+    @Override
     public void setTextField(Product x){
         tfName.setText(x.getName());
         tfQuantity.setText(((Thuoc)x).getQuantity()+"");
