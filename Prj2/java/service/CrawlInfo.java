@@ -40,31 +40,40 @@ public class CrawlInfo  {
                 .ignoreContentType(true).execute().body();
 
         JsonObject json = new JsonParser().parse(data).getAsJsonObject();
-        String path = json.get("data")
-                .getAsJsonObject()
-                .get("products")
-                .getAsJsonObject()
-                .get("edges")
-                .getAsJsonArray()
-                .get(0)
-                .getAsJsonObject()
-                .get("node").getAsJsonObject().get("slug").getAsString()+".html";
-        return "https://www.pharmacity.vn/"+path;
+        try{
+            String path = json.get("data")
+                    .getAsJsonObject()
+                    .get("products")
+                    .getAsJsonObject()
+                    .get("edges")
+                    .getAsJsonArray()
+                    .get(0)
+                    .getAsJsonObject()
+                    .get("node").getAsJsonObject().get("slug").getAsString()+".html";
+            return "https://www.pharmacity.vn/"+path;
+        }
+        catch (IndexOutOfBoundsException e) {
+            return null;
+        }
     }
     private ArrayList<Text> crawl(String url) throws IOException{
 
-        Document doc =Jsoup.connect(url)
-                .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Safari/537.36 OPR/88.0.4412.65")
-                .get();
-        Elements element = doc.select("div.ProductTab_content__2H-Vw p");
-        for(Element e : element)
-        {
-            Text strongText = new Text(e.select("strong").text());
-            strongText.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
-            e.select("strong").remove();
-            Text normalText = new Text(e.text());
-            listText.add(strongText);
-            listText.add(normalText);
+        if(url != null){
+            Document doc =Jsoup.connect(url)
+                    .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Safari/537.36 OPR/88.0.4412.65")
+                    .get();
+            Elements element = doc.select("div.ProductTab_content__2H-Vw p");
+            for(Element e : element)
+            {
+                Text strongText = new Text(e.select("strong").text());
+                strongText.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 12));
+                e.select("strong").remove();
+                Text normalText = new Text(e.text());
+                listText.add(strongText);
+                listText.add(normalText);
+            }
+        } else {
+            listText.add(new Text("Chưa có thông tin mất rồi :(("));
         }
         return listText;
     }

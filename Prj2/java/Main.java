@@ -1,4 +1,4 @@
-package Prj2;
+package Prj2.java;
 
 import javafx.application.Application;
 import javafx.application.Platform;
