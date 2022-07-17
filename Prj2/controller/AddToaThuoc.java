@@ -1,7 +1,7 @@
 package Prj2.controller;
 
 
-import Prj2.model.ListToaThuoc;
+
 import Prj2.model.Product;
 import Prj2.model.ThuocTrongToa;
 import Prj2.model.ToaThuoc;

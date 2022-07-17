@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -26,13 +27,15 @@
             <Font name="Cambria Bold" size="15.0" />
          </font>
          <padding>
-            <Insets left="16.0" />
-         </padding></Button>
-      <FontAwesomeIcon fill="WHITE" glyphName="PLUS" layoutX="609.0" layoutY="38.0" text="">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </FontAwesomeIcon>
+            <Insets left="4.0" />
+         </padding>
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="21.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/3524384.gif" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <HBox layoutX="42.0" layoutY="10.0" prefHeight="36.0" prefWidth="448.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
